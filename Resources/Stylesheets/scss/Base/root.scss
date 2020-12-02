@@ -1,0 +1,20 @@
+@import "variables";
+
+:root {
+    --color-black: #{$color-black};
+    --color-white: #{$color-white};
+    --color-trans: #{$color-trans};
+    --color-nav: #{$color-nav};
+    --color-primary: #{$color-primary};
+    --color-primary--hover: #{$color-primary--hover};
+    --color-secondary: #{$color-secondary};
+    --trans-time: #{$trans-time};
+    --animate-all: #{$animate-all};
+    --gap-xxl: #{$gap-xxl};
+    --gap-xl: #{$gap-xl};
+    --gap-l: #{$gap-l};
+    --gap-m: #{$gap-m};
+    --gap-s: #{$gap-s};
+    --font-text: #{$font-text};
+    --font-title: #{$font-title};
+}

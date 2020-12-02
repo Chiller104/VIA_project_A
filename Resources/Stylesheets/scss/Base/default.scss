@@ -1,0 +1,32 @@
+@import "global";
+
+* {
+    box-sizing: border-box;
+    
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-text);
+    overflow-x: hidden;
+}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+address{
+    font-style: normal;
+}

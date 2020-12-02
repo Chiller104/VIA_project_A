@@ -1,0 +1,16 @@
+﻿{
+	"compilerOptions": {
+		"baseUrl": "./wwwroot/js",
+		"module": "CommonJS",
+		"target": "ES6",
+		"strictNullChecks": false,
+		"noEmitOnError": true,
+		"noImplicitReturns": true,
+		"removeComments": true,
+		"sourceMap": true
+	},
+	"compileOnSave": false,
+	"exclude": [
+		"node_modules"
+	]
+}

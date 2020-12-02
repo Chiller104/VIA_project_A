@@ -1,0 +1,51 @@
+{
+  "name": "node_modules_config",
+  "version": "3.0.0",
+  "description": "Webpack with ts-loader and stylelint config.",
+  "private": true,
+  "keywords": [],
+  "license": "ISC",
+  "author": "Lukáš Chylík",
+  "devDependencies": {
+    "@types/jquery": "^3.5.4",
+    "autoprefixer": "10.0.4",
+    "browser-sync": "2.26.13",
+    "clean-css-cli": "4.3.0",
+    "dotvvm-types": "3.0.0-preview01",
+    "jquery": "^3.5.1",
+    "node-sass": "^5.0.0",
+    "postcss": "8.1.10",
+    "postcss-cli": "8.3.0",
+    "postcss-loader": "4.1.0",
+    "postcss-value-parser": "4.1.0",
+    "stylelint": "13.8.0",
+    "stylelint-order": "4.1.0",
+    "ts-loader": "8.0.11",
+    "typescript": "4.1.2",
+    "uglify-js": "3.12.0",
+    "watch": "1.0.2",
+    "webpack": "5.9.0",
+    "webpack-cli": "4.2.0",
+    "webpack-dev-server": "3.11.0"
+  },
+  "stylelint": {
+    "enabled": true,
+    "extends": "./.stylelintrc.json",
+    "fileExtensions": "scss"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions"
+  ],
+  "scripts": {
+    "bundle": "npm run build:production && npm run bundle:global.css",
+    "build:development": "webpack --mode=development",
+    "build:production": "webpack --mode=production",
+    "bundle:global.css": "npm run compile:global.scss && postcss wwwroot/css/style.css --config ./postcss.config.js | cleancss -o wwwroot/css/style.min.css",
+    "compile:global.scss": "npm run stylelint && node-sass --source-map=true Resources/Stylesheets/scss/style.scss wwwroot/css/style.css",
+    "watch:global.scss": "npm run bundle:global.css && watch \"npm run bundle:global.css\" Resources/Stylesheets/scss",
+    "stylelint": "stylelint --fix Resources/Stylesheets/scss/**/*.scss",
+    "browser-sync": "browser-sync start --proxy https://localhost:57566/ --https --files=\"wwwroot/css/*.css\" \"wwwroot/js/*.js\""
+  }
+}

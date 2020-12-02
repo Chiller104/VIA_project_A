@@ -1,0 +1,43 @@
+@import "../Base/global";
+
+h1 {
+    margin-bottom: $gap-xl;
+    font-size: xx-large;
+}
+
+h2 {
+    margin-bottom: $gap-l;
+    font-size: x-large;
+}
+
+h3 {
+    font-size: large;
+}
+
+h4 {
+    font-size: medium;
+}
+
+h5 {
+    font-size: small;
+}
+
+h6 {
+    font-size: x-small;
+}
+
+span, a {
+    font-size: medium;
+
+    @include res-max-mobile-l {
+        font-size: small;
+    }
+}
+
+p {
+    font-size: medium;
+}
+
+small {
+    font-size: xx-small;
+}

@@ -1,0 +1,111 @@
+@import "../base/global";
+
+.container {
+    width: 65%;
+    min-width: 115rem;
+    max-width: $width-laptop-l;
+    margin: 0 auto;
+
+    @include res-max-laptop-l {
+        width: 80%;
+    }
+
+    @include res-max-laptop-m {
+        width: 100%;
+        min-width: 0;
+        padding: 0 var(--gap-base);
+    }
+
+    &--no-padding {
+        @include res-max-laptop-m {
+            padding: 0;
+        }
+    }
+
+    &--small {
+        min-width: 0;
+        max-width: $width-tablet;
+
+        @include res-max-tablet {
+            width: 80%;
+        }
+
+        @include res-max-mobile-l {
+            width: 100%;
+        }
+    }
+
+    &--smaller {
+        width: 100%;
+        min-width: 0;
+        max-width: $width-mobile-l;
+
+        @include res-max-tablet {
+            max-width: none;
+        }
+    }
+}
+
+.flex-container {
+    @include flex-wrapper-row(0, 0, 50%, stretch);
+    width: 65%;
+    min-width: 110rem;
+    margin: 0 auto;
+
+    &--items-center {
+        align-items: center;
+    }
+
+    @include res-max-laptop-l {
+        width: 80%;
+    }
+
+    @include res-max-laptop-m {
+        width: 100%;
+        min-width: 0;
+        padding: 0 var(--gap-base);
+        @include flex-wrapper-row(0, 0, 100%, flex-start);
+    }
+
+    &--full-width {
+        @include flex-wrapper-row(0, 0, 48.5%, stretch);
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+
+        @include res-max-laptop-s {
+            @include flex-wrapper-row(0, 0, 100%, flex-start);
+
+            > div:first-of-type {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+}
+
+.grid-container {
+    display: grid;
+    width: 65%;
+    min-width: 115rem;
+    max-width: $width-laptop-l;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+
+    &--items-center {
+        align-items: center;
+    }
+
+    @include res-max-laptop-l {
+        width: 80%;
+    }
+
+    @include res-max-laptop-m {
+        align-items: stretch;
+        width: 100%;
+        min-width: 0;
+        padding: 0 var(--gap-base);
+        grid-gap: 3rem;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: max-content;
+    }
+}

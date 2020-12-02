@@ -1,0 +1,30 @@
+﻿//colors
+$color-black: hsla(0, 0%, 0%, 1);
+$color-white: hsla(0, 0%, 100%, 1);
+$color-trans: hsla(0, 0%, 0%, 0);
+$color-nav: hsla(0, 0%, 100%, .9);
+$color-primary: hsla(136, 61%, 45%, 1);
+$color-primary--hover: hsla(136, 61%, 45%, .8);
+$color-secondary: hsla(120, 2%, 17%, 1);
+$color-background: lightcyan;
+
+$trans-time: .25s;
+$animate-all: all $trans-time ease-in-out;
+$gap-m: .8rem;
+$gap-s: ($gap-m / 2);
+$gap-l: ($gap-m * 2);
+$gap-xl: ($gap-m * 3);
+$gap-xxl: ($gap-m * 4);
+$font-text: 'Open Sans', sans-serif;
+$font-title: $font-text;
+
+// All devices width for MediaQuery
+$width-mobile-s: 320px;
+$width-mobile-m: 375px;
+$width-mobile-l: 425px;
+$width-tablet: 768px;
+$width-laptop-s: 1024px;
+$width-laptop-m: 1360px;
+$width-laptop-l: 1440px;
+$width-laptop-xl: 1920px;
+$width-4k: 2560px;
