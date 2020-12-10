@@ -12,15 +12,11 @@ h1 {
   text-align: center;
 }
 
-.container {
-  min-width: 115rem;
-}
-
 .map {
-  margin-top: 3vh;
-  margin-left: 20%;
-  height: 80vh;
-  width: 60%;
+  margin-top: 2vh;
+  margin-left: 15%;
+  height: 70vh;
+  width: 70%;
   border: solid black 10px;
 }
 
@@ -79,7 +75,7 @@ h1 {
 }
 
 .map__info-window_add label {
-  font-size: 22px;
+  font-size: 16px;
 }
 
 .map__info-window_add input {
@@ -89,6 +85,7 @@ h1 {
 
 .map__info-window_button_add {
   background-color: #5fbb03;
+  margin-left: 6px;
   margin-top: 15px;
   width: 100%;
   height: 40px;
@@ -101,6 +98,7 @@ h1 {
 }
 
 .map__info-window__button_delete {
+  visibility: visible;
   background-color: #ff7a7a;
   width: 100%;
   margin-top: -10px;
@@ -111,5 +109,35 @@ h1 {
 
 .map__info-window__button_delete:hover {
   background-color: #ff2020;
+}
+
+.find_input {
+  margin-top: -15px;
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 15px;
+  border: none;
+  height: 40px;
+  font-size: 20px;
+}
+
+.find_button {
+  margin-top: 15px;
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #ffe600;
+  font-family: cursive;
+  font-size: 25px;
+  width: 150px;
+  height: 50px;
+  border: solid black 2px;
+  border-radius: 20px;
+}
+
+.find_button:hover {
+  background-color: black;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

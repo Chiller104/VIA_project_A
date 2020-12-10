@@ -3,12 +3,12 @@ var locationLatitude = 0;
 var locationLongitude = 0;
 var myPlaces = [];
 
-function initMap() {
+var LatLng = {
+    lat: 49.41506712302851,
+    lng: 18.54945785673615
+};
 
-    var LatLng = {
-        lat: 49.41506712302851,
-        lng: 18.54945785673615
-    };
+function initMap() {
 
     var styledMapType = new google.maps.StyledMapType(
         [{
@@ -167,7 +167,7 @@ function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
         center: LatLng,
-        zoom: 8,
+        zoom: 10,
         disableDefaultUI: true,
         scaleControl: true,
         zoomControl: true,
@@ -199,18 +199,24 @@ function initMap() {
                                     <h4>NOVÝ BOD</h4>
                                     <h5>Latitude: ${locationLatitude}</h5>
                                     <h5>Longtitude: ${locationLongitude}</h5>
-                                    <h3>Zadajte názov destinácie:</h3>
-                                        <input type="text" id="nazov" name="názov" required>
-                                            <input class="checkmark" type="radio" id="done" name="type" value="done">
-                                            <label for="done">Navštívíl som</label><br>
-                                            <input class="checkmark" type="radio" id="want" name="type" value="want">
-                                            <label for="want">Chcem navštíviť</label><br>
-                                        <button class="map__info-window_button_add" onclick="savePointToStorage(${locationLatitude}, ${locationLongitude})">Pridať Destináciu na mapu</button>
+                                            
+                                            <form action="" onsubmit="savePointToStorage(${locationLatitude}, ${locationLongitude})">
+                                                            <label for="nazov">Zadajte názov destinácie:</label>
+                                                            <br>
+                                                            <input type="text" id="nazov" required>
+                                                                <input class="checkmark" type="radio" id="done" name="type" value="done" required>
+                                                                <label for="done">Navštívíl som</label><br>
+                                                                <input class="checkmark" type="radio" id="want" name="type" value="want">
+                                                                <label for="want">Chcem navštíviť</label><br>
+                                            <input class="map__info-window_button_add" type="submit" value="Pridať Destináciu" />  
+                                            
                                     </div>`;
 
         infoWindowLocation.setContent(CustomWindowNewPoint);
         infoWindowLocation.open(map);
     });
+
+    //<button onclick="savePointToStorage(${locationLatitude}, ${locationLongitude})"></button>
 
     myPlaces.forEach(function(place) {
         var marker = new google.maps.Marker({
@@ -229,8 +235,19 @@ function initMap() {
                                             <h4>Aktuálne počasie: </h4>
                                             <p id="temp"></p>
                                             <p id="weather"></p>
-                                            <button class="map__info-window__button_delete" onclick="deletePoint()">Odstrániť destináciu z mapy</button>
+                                            <div id="red_button"><button id="red_button" class="map__info-window__button_delete" onclick="deletePoint()">Odstrániť destináciu z mapy</button></div>
                                         </div>`;
+
+            if (place.type == 'czechia' || place.type == 'slovakia') {
+
+                CustomWindow = `<div class="map__info-window_destination">
+                                 <h4 class="title" id="title">${place.title}</h4>
+                                <h4>Aktuálne počasie: </h4>
+                                <p id="temp"></p>
+                                <p id="weather"></p>
+                            </div>`;
+            }
+
             infowindow.setContent(CustomWindow);
             infowindow.open(map, marker);
 
@@ -242,9 +259,7 @@ function initMap() {
     map.mapTypes.set('styled_map', styledMapType);
     map.setMapTypeId('styled_map');
 
-    //getWeatherResult();
-    //displayWeatherResult();
-    savePointToStorageDone();
+
 }
 
 function addPoint(locationLatitude, locationLongitude) {
@@ -259,6 +274,8 @@ function addPoint(locationLatitude, locationLongitude) {
 
 
 function savePointToStorage(lat, lng) {
+
+    console.log("Funkcia sa predsa len zavolala :D");
 
     var ele = document.getElementsByName('type');
     for (i = 0; i < ele.length; i++) {
@@ -284,14 +301,12 @@ function fillPointsArray() {
 }
 
 function deletePoint() {
-    console.log("volam funkciu deletePoint");
     var nazov = document.getElementById("title").textContent;
     localStorage.removeItem(nazov);
     myPlaces = []
     fillPointsArray();
     initMap();
 }
-
 
 function getWeatherResult(lat, lng) {
     fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lng + '&units=metric&appid=b5ae16ccc8d4cca0efcb0a528ebb8965')
@@ -304,6 +319,27 @@ function displayWeatherResult(weather) {
     console.log(weather);
     document.getElementById("temp").innerHTML = Math.round(weather.main.temp) + '&#8451';
     document.getElementById("weather").innerHTML = weather.weather[0].main;
+}
+
+
+function getWeatherResultByCity() {
+    var mesto = document.getElementById("mesto").value;
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + mesto + '&appid=b5ae16ccc8d4cca0efcb0a528ebb8965')
+        .then(weather => {
+            return weather.json();
+        }).then(setOnMap);
+}
+
+function setOnMap(weather) {
+
+    console.log(typeof weather.coord.lat);
+
+    LatLng = {
+        lat: weather.coord.lat,
+        lng: weather.coord.lon
+    };
+
+    initMap();
 }
 
 

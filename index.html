@@ -33,10 +33,13 @@
 <body>
     <main>
         <section>
-            <div class="container">
-                <h1>map of my dream destinations</h1>
-                <div class="map" id="map"></div>
+            <h1>map of my dream destinations</h1>
+            <div>
+                <input class="find_input" type="text" id="mesto"><br>
+                <button class="find_button" id="find_button" onclick="getWeatherResultByCity()">Find City</button>
             </div>
+            <div class="map" id="map"></div>
+
         </section>
     </main>
     <script type="text/javascript" src="./wwwroot/js/init.js" defer></script>
