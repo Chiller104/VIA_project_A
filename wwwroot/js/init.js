@@ -1,12 +1,5 @@
-/******/
-(function() { // webpackBootstrap
-    /*!***********************************!*\
-      !*** ./Resources/Scripts/init.ts ***!
-      \***********************************/
-    /*! unknown exports (runtime-defined) */
-    /*! runtime requirements:  */
-    console.log('Hello World!');
+(function() {
+    console.log('Hello World Cicina!');
 
-    /******/
+
 })();
-//# sourceMappingURL=init.js.map

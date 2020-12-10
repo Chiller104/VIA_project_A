@@ -1,0 +1,19 @@
+:root {
+  --color-black: black;
+  --color-white: white;
+  --color-trans: rgba(0, 0, 0, 0);
+  --color-nav: rgba(255, 255, 255, 0.9);
+  --color-primary: #2db952;
+  --color-primary--hover: rgba(45, 185, 82, 0.8);
+  --color-secondary: #2a2c2a;
+  --trans-time: 0.25s;
+  --animate-all: all 0.25s ease-in-out;
+  --gap-xxl: 3.2rem;
+  --gap-xl: 2.4rem;
+  --gap-l: 1.6rem;
+  --gap-m: 0.8rem;
+  --gap-s: 0.4rem;
+  --font-text: Open Sans, sans-serif;
+  --font-title: Open Sans, sans-serif;
+}
+/*# sourceMappingURL=root.css.map */

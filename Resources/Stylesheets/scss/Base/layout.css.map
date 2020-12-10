@@ -1,0 +1,19 @@
+{
+    "version": 3,
+    "mappings": "AIAA,AAAA,KAAK,CAAC;EACF,cAAc,CAAA,cAAC;EACf,cAAc,CAAA,MAAC;CAClB;;AJDD,AAAA,IAAI,CAAC;EACD,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,WAAW;CAoBzB;;AAtBD,AAII,IAJA,CAIA,GAAG,CAAC;EACA,IAAI,EAAE,IAAI;CACb;;AANL,AAQI,IARA,CAQA,MAAM,CAAC;EACH,IAAI,EAAE,QAAQ;EACd,KAAK,EAAE,IAAI;CACd;;AAXL,AAaI,IAbA,CAaA,IAAI,CAAC;EACD,IAAI,EAAE,QAAQ;EACd,KAAK,EAAE,IAAI;CACd;;AAhBL,AAkBI,IAlBA,CAkBA,MAAM,CAAC;EACH,IAAI,EAAE,QAAQ;EACd,KAAK,EAAE,IAAI;CACd",
+    "sources": [
+        "layout.scss",
+        "_global.scss",
+        "_variables.scss",
+        "_mixins.scss",
+        "mixins/_border.scss",
+        "Mixins/_grid-flex.scss",
+        "Mixins/_responsive.scss",
+        "_variables.scss",
+        "Mixins/_responsive.scss",
+        "_variables.scss",
+        "_functions.scss"
+    ],
+    "names": [],
+    "file": "layout.css"
+}

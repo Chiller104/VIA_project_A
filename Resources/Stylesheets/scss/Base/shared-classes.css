@@ -1,0 +1,102 @@
+:root {
+  --color-border: rgba(0,0,0,1);
+  --border-width: .1rem;
+}
+
+.element-to-middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.text-to-center {
+  text-align: center;
+}
+
+.text-to-left {
+  text-align: left;
+}
+
+.text-to-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.base-space {
+  display: block;
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .base-space {
+    margin-bottom: 3rem;
+  }
+}
+
+.elipsis-text {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.relative {
+  position: relative;
+}
+
+.tablet-content {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .tablet-content {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .no-tablet-content {
+    display: none;
+  }
+}
+
+.mobile-content {
+  display: none;
+}
+
+@media only screen and (max-width: 425px) {
+  .mobile-content {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .no-mobile-content {
+    display: none;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.inline-flex {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.inline-block {
+  display: inline-block;
+}
+/*# sourceMappingURL=shared-classes.css.map */

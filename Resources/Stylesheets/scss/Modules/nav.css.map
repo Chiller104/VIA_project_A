@@ -1,0 +1,19 @@
+{
+    "version": 3,
+    "mappings": "AIAA,AAAA,KAAK,CAAC;EACF,cAAc,CAAA,cAAC;EACf,cAAc,CAAA,MAAC;CAClB",
+    "sources": [
+        "nav.scss",
+        "../Base/_global.scss",
+        "../Base/_variables.scss",
+        "../Base/_mixins.scss",
+        "../Base/mixins/_border.scss",
+        "../Base/Mixins/_grid-flex.scss",
+        "../Base/Mixins/_responsive.scss",
+        "../Base/_variables.scss",
+        "../Base/Mixins/_responsive.scss",
+        "../Base/_variables.scss",
+        "../Base/_functions.scss"
+    ],
+    "names": [],
+    "file": "nav.css"
+}
